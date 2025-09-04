@@ -1,0 +1,167 @@
+header{
+    margin:20px 10px;
+    border: 2px solid mediumorchid;
+    border-radius: 10px;
+    height: 70px;
+}
+
+nav{ 
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+ul{
+    display:flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 60px;
+}
+a{
+    padding:5px 10px ;
+    text-decoration: none;
+    color: green;
+}
+li{
+    margin:0px 5px;
+    font-size: 18px;
+    padding: 5px;
+    list-style: none;
+}
+
+a:hover{
+    color: white;
+    background-color: mediumorchid;
+    border-radius: 5px;
+}
+nav img{
+  height: 60px;
+  width: 70px;
+  margin-left: 50px;
+} 
+#htab{
+    width: 480px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1{
+    display: inline-block;
+    margin-left:15px;
+    color: mediumorchid;
+}
+#tabimg{
+    height: 70px;
+    width: 70px;
+}
+td img{ 
+    margin: 0px 10px;
+    height: 30px;
+    width: 30px;
+}
+span{
+    margin: 0px 10px;
+    display: inline-block;
+    width: 10px;
+}
+#pts{
+ font-weight: bold;
+}
+
+table{
+    margin: 0px 10px;
+}
+
+tr:nth-child(-n+4) td:first-child {
+    position: relative;
+}
+
+tr:nth-child(-n+4) td:first-child::before {
+    content: "";
+    position: absolute;
+    left:-7px;
+    top: 0;
+    width: 4px;       
+    height: 100%; 
+    background-color: blue;
+}
+
+tr:nth-last-child(-n+3) td:first-child{
+    position: relative;
+}
+
+tr:nth-child(5) td:first-child {
+    position: relative;
+}
+
+tr:nth-child(5) td:first-child::before {
+    content: "";
+    position: absolute;
+    left:-7px;
+    top: 0;
+    width: 4px;       
+    height: 100%; 
+    background-color: orange;
+}
+
+tr:nth-last-child(-n+3) td:first-child::before {
+    content: "";
+    position: absolute;
+    left: -7px; ;
+    top: 0;
+    width: 4px;       
+    height: 100%; 
+    background-color: red; 
+}
+#guideLine{
+    margin: 20px;
+    border: 1px solid mediumorchid;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+}
+#uefa{
+position: relative;
+margin: 20px;
+}
+p:first-child{
+    font-weight: bold;
+}
+#uefa::before{
+    content: "";
+    position: absolute;
+    left: -25px; ;
+    top: 5px;
+    width: 15px;       
+    height: 60%; 
+    background-color: blue;
+ }
+#el{
+position: relative;
+margin: 20px;
+}
+#el::before{
+    content: "";
+    position: absolute;
+    left: -25px; ;
+    top: 5px;
+    width: 15px;       
+    height: 60%; 
+    background-color: orange;
+     
+}
+#reg{
+position: relative;
+margin: 20px;
+}
+#reg::before{
+    content: "";
+    position: absolute;
+    left: -25px; ;
+    top: 5px;
+    width: 15px;       
+    height: 60%; 
+    background-color: red;
+     
+}
