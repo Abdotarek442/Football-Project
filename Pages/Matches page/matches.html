@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premier League Matches</title>
+  <link rel="stylesheet" href="matches.css">
+</head>
+<body>
+  <header>
+        <nav>
+           <img src="../stat page/img/logo.png" alt="">    
+           <ul> 
+             <li><a href="../../Home Page/index.html">Home</a></li>
+             <li><a href="../stat page/index.html">Statistics</a></li>
+             <li><a href="../Table Page/index.html">Table</a></li>
+             <li><a href="matches.html">Matches</a></li>
+           </ul>
+        </nav>
+    </header>
+  <div class="header">
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" 
+         alt="Premier League Logo" class="pl-logo">
+    <h1>Premier League Matches</h1>
+  </div>
+
+  <div class="filter-buttons">
+    <button onclick="filterMatches('ALL')">All</button>
+    <button onclick="filterMatches('LIVE')">Live</button>
+    <button onclick="filterMatches('FINISHED')">Finished</button>
+    <button onclick="filterMatches('SCHEDULED')">Scheduled</button>
+  </div>
+
+  <div class="matches-container" id="matches"></div>
+
+  <script src="matches.js"></script>
+</body>
+</html>

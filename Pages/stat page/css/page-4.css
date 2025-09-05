@@ -32,7 +32,7 @@ li{
 
 a:hover{
     color: white;
-    background-color: #38003C;
+    background-color:#38003C;
     border-radius: 5px;
 }
 nav img{
@@ -40,3 +40,23 @@ nav img{
   width: 70px;
   margin-left: 50px;
 } 
+#htab{
+    width: 480px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1{
+    display: inline-block;
+    margin-left:15px;
+    color: #38003C;
+}
+thead th {
+    color: white !important;   
+    font-size: 18px;           
+    font-weight: bold;     
+    background-color: #38003C !important;    
+ }
+ thead tr {
+    height: 30px;
+ }

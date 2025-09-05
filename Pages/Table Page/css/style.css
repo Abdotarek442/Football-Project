@@ -1,6 +1,6 @@
 header{
     margin:20px 10px;
-    border: 2px solid mediumorchid;
+    border: 2px solid #38003C;
     border-radius: 10px;
     height: 70px;
 }
@@ -21,7 +21,7 @@ ul{
 a{
     padding:5px 10px ;
     text-decoration: none;
-    color: green;
+    color: rgb(0, 0, 0);
 }
 li{
     margin:0px 5px;
@@ -32,7 +32,7 @@ li{
 
 a:hover{
     color: white;
-    background-color: mediumorchid;
+    background-color: #38003C;
     border-radius: 5px;
 }
 nav img{
@@ -48,7 +48,7 @@ nav img{
 }
 h1{
     display: inline-block;
-    color: mediumorchid;
+    color: #38003C;
 }
 #tabimg{
     margin-left:10px;
@@ -116,7 +116,7 @@ tr:nth-last-child(-n+3) td:first-child::before {
 }
 #guideLine{
     margin: 20px;
-    border: 1px solid mediumorchid;
+    border: 1px solid #38003C;
     padding: 20px;
     border-radius: 10px;
     width: 500px;
