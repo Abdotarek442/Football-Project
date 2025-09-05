@@ -1,5 +1,5 @@
 // News API integration for fetching and displaying news articles
-var newsKey = '958d1c2672ba2ed01116f3901623188c';
+var newsKey = 'e0dc582be193b65771f1810e6bff4495';
 var newsLangauge = 'en';
 var categories = ["politics", "business", "entertainment", "sports"];
 
