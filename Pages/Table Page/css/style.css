@@ -48,12 +48,12 @@ nav img{
 }
 h1{
     display: inline-block;
-    margin-left:15px;
     color: mediumorchid;
 }
 #tabimg{
-    height: 70px;
-    width: 70px;
+    margin-left:10px;
+    height: 80px;
+    width: 80px;
 }
 td img{ 
     margin: 0px 10px;
