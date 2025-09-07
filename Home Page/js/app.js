@@ -96,6 +96,8 @@ function loadWeather() {
             $('#weather').text(data.main.temp);
             var iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
             $('#weatherIcon').attr('src', iconUrl);
+            $('#city').text(data.name);
+            $('#description').text(data.weather[0].description);
             $('#weatherIcon').attr('title', data.weather[0].description);
         },
         error: function (data) {
