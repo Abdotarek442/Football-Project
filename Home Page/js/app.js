@@ -106,3 +106,50 @@ function loadWeather() {
         },
     });
 }
+
+const currencySelects = ["fromCurrency", "toCurrency"];
+const apiUrl = "https://api.frankfurter.app/currencies";
+
+// Fetch available currencies and populate the dropdowns
+fetch(apiUrl)
+  .then(res => res.json())
+  .then(data => {
+    currencySelects.forEach(selectId => {
+      const select = document.getElementById(selectId);
+      for (let code in data) {
+        const option = document.createElement("option");
+        option.value = code;
+        option.textContent = `${code} - ${data[code]}`;
+        select.appendChild(option);
+      }
+    });
+
+    // Set defaults
+    document.getElementById("fromCurrency").value = "USD";
+    document.getElementById("toCurrency").value = "EUR";
+  });
+
+// Convert currency
+function convertCurrency() {
+  const amount = document.getElementById("amount").value;
+  const from = document.getElementById("fromCurrency").value;
+  const to = document.getElementById("toCurrency").value;
+
+  if (from === to) {
+    document.getElementById("result").textContent = "Same currency selected.";
+    return;
+  }
+
+  const convertUrl = `https://api.frankfurter.app/latest?amount=${amount}&from=${from}&to=${to}`;
+
+  fetch(convertUrl)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("result").textContent =
+        `${amount} ${from} = ${data.rates[to]} ${to}`;
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      document.getElementById("result").textContent = "Conversion failed.";
+    });
+}
