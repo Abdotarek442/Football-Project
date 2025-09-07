@@ -1,45 +1,47 @@
 // News API integration for fetching and displaying news articles
-var newsKey = 'e0dc582be193b65771f1810e6bff4495';
+var newsKey = '958d1c2672ba2ed01116f3901623188c';
 var newsLangauge = 'en';
 var categories = ["politics", "business", "entertainment", "sports"];
 
 categories.forEach(function(cat) {
     var newsApiUrl = `https://gnews.io/api/v4/top-headlines?category=${cat}&apikey=${newsKey}&lang=${newsLangauge}&max=3`;
 
-    $.ajax({
-        type: 'get',
-        dataType: 'json',
-        url: newsApiUrl,
-        success: function(result){
-            result.articles.slice(0,3).forEach(function(article) {
-                var articleHtml = `
-                    <div class="col-md-4 mb-3">
-                        <a target="_blank" href="${article.url}">
-                            <img class="img-fluid mb-2" src="${article.image}" alt="News image">
+$.ajax({
+    type: 'get',
+    dataType: 'json',
+    url: newsApiUrl,
+    success: function(result){
+        result.articles.slice(0,3).forEach(function(article) {
+            var articleHtml = `
+                <div class="news-card">
+                    <a target="_blank" href="${article.url}">
+                        <img src="${article.image}" alt="News image">
+                    </a>
+                    <h6>
+                        <a target="_blank" href="${article.url}">${article.title}</a>
+                    </h6>
+                    <small class="text-muted">${article.publishedAt}</small>
+                    <div>
+                        <a target="_blank" href="${article.source.url}">
+                            <small>${article.source.name}</small>
                         </a>
-                        <h6>
-                            <a target="_blank" href="${article.url}">${article.title}</a>
-                        </h6>
-                        <small class="text-muted">${article.publishedAt}</small>
-                        <div>
-                            <a target="_blank" href="${article.source.url}">
-                                <small>${article.source.name}</small>
-                            </a>
-                        </div>
                     </div>
-                `;
-                $(`#${cat}`).append(articleHtml);
-            });
-        },
-        error: function(result) {
-            console.log("Error fetching " + cat + " news");
-        }
-    });
+                </div>
+            `;
+            $(`#${cat}`).append(articleHtml);
+        });
+    },
+    error: function(result) {
+        console.log("Error fetching " + cat + " news");
+    }
+});
+
 });
 
 // Sports API integration for fetching and displaying live football matches
 var sportsKey = '216b990b932621ee14414034bb9490182986a74c5157975b456413882f9d96f5';
-var sportsApiUrl = `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${sportsKey}`;
+var sportsApiLeagueId = 152;
+var sportsApiUrl = `https://apiv2.allsportsapi.com/football/?met=Livescore&APIkey=${sportsKey}&leagueId=${sportsApiLeagueId}`;
 
 $.ajax({
     type: 'get',
@@ -47,26 +49,26 @@ $.ajax({
     url: sportsApiUrl,
     success: function (data){
         if(data.result && data.result.length > 0){
+            $("#matches").empty();
 
             data.result.forEach(function(match){
                 var matchHtml = `
-                    <div class="d-flex justify-content-between align-items-center border-bottom py-2">
-                        <span><strong>${match.event_home_team}</strong></span>
-                        <span class="badge bg-primary">${match.event_final_result}</span>
-                        <span><strong>${match.event_away_team}</strong></span>
+                    <div class="match">
+                        <span>${match.event_home_team}</span>
+                        <span>${match.event_final_result || '-'}</span>
+                        <span>${match.event_away_team}</span>
                     </div>
                 `;
                 $("#matches").append(matchHtml);
             });
         } else {
-            $("#matches").html("<p>There is no matchs now</p>");
+            $("#matches").html("<p>There are no matches now</p>");
         }
     },
     error: function(){
         $("#matches").html("<p>Error loading matches</p>");
     }
 });
-
 // Weather API integration for fetching and displaying current weather
 
 var weatherKey ='09bbd1c8fdef1445c7ef20839f4256dc';
@@ -96,8 +98,8 @@ function loadWeather() {
             $('#weather').text(data.main.temp);
             var iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
             $('#weatherIcon').attr('src', iconUrl);
-            $('#city').text(data.name);
-            $('#description').text(data.weather[0].description);
+            $('#cityName').text(data.name);
+            $('#weatherDesc').text(data.weather[0].description);
             $('#weatherIcon').attr('title', data.weather[0].description);
         },
         error: function (data) {
