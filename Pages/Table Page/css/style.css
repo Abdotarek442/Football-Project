@@ -1,3 +1,14 @@
+
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
 header{
     margin:20px 10px;
     border: 2px solid #38003C;
@@ -5,12 +16,68 @@ header{
     height: 70px;
 }
 
-nav{ 
-    display:flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
 }
+header {
+  background: var(--primary);
+  margin: 20px 10px;
+  border-radius: 16px;
+  height: 80px;
+  box-shadow: var(--card-shadow);
+}
+a {
+  padding: 10px 16px;
+  text-decoration: none;
+  color: white;
+  transition: var(--transition);
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+:root {
+  --primary: #38003c;
+  --secondary: #c2aef0;
+  --accent: #e90052;
+  --light: #f8f9fa;
+  --dark: #1a1a1a;
+  --gray: #6c757d;
+  --card-shadow: 0 8px 20px rgba(56, 0, 60, 0.12);
+  --transition: all 0.3s ease;
+}
+
+
+a:hover {
+  color: var(--primary);
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+a.active {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+nav img {
+  height: 60px;
+  width: 70px;
+  /* filter: brightness(0) invert(1); */
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #d3d4d5 0%, #e4e8f0 100%);
+  margin: 0;
+  padding: 0;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+
 ul{
     display:flex;
     flex-direction: row;
@@ -18,11 +85,11 @@ ul{
     margin-bottom: 10px;
     margin-right: 60px;
 }
-a{
+/* a{
     padding:5px 10px ;
     text-decoration: none;
     color: rgb(0, 0, 0);
-}
+} */
 li{
     margin:0px 5px;
     font-size: 18px;
@@ -30,16 +97,16 @@ li{
     list-style: none;
 }
 
-a:hover{
+/* a:hover{
     color: white;
     background-color: #38003C;
     border-radius: 10px;
-}
-nav img{
+} */
+/* nav img{
   height: 60px;
   width: 70px;
   margin-left: 50px;
-} 
+}  */
 #htab{
     width: 480px;
     display: flex;
