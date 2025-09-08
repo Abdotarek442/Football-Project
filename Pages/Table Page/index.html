@@ -10,7 +10,7 @@
 <body>
     <header>
         <nav>
-           <img src="imgs/PL logo.png" alt="">    
+           <img src="imgs/PL nav.png" alt="">    
            <ul> 
              <li><a href="../../Home Page/index.html">Home</a></li>
              <li><a href="../stat page/index.html">Statistics</a></li>
@@ -20,15 +20,18 @@
         </nav>
     </header>
     <main>
-     <div>
       <div id="htab">
-      <img src="imgs/PL logo.png" id="tabimg">
-      <h1>Premier League Table</h1>
       </div>
-       <table class="table table-hover">
-        <thead>
+     <div class="container py-4">
+      <h2 class="table-title" style="color: #38003C;">
+        <img src="imgs/PL logo.png" alt="PL Logo" style="vertical-align: middle; width: 70px; height: 80px">
+        Premier League Table
+      </h2>
+      <div>
+       <table class="table  table-striped table-hover rounded-table">
+        <thead class="table-primary">
            <tr>
-            <th>team</th>
+            <th>Team</th>
             <th>MP</th>
             <th>W</th>
             <th>D</th>
@@ -41,13 +44,15 @@
         </thead>
         <tbody id="content" ></tbody>
        </table>
+       </div>
      </div>
+    </div> 
       <div id="guideLine" class="">
         <p>Qualification/Relegation</p>
         <p id="uefa">UEFA Champions League group stage</p>
         <p id="el">Europa League group stage</p>
         <p id="reg">Relegation</p>
-      </div>
+      </div> 
     </main>
 
     <footer>

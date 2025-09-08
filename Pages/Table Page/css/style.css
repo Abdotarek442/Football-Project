@@ -97,31 +97,13 @@ li{
     list-style: none;
 }
 
-/* a:hover{
-    color: white;
-    background-color: #38003C;
-    border-radius: 10px;
-} */
-/* nav img{
-  height: 60px;
-  width: 70px;
-  margin-left: 50px;
-}  */
-#htab{
-    width: 480px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-h1{
-    display: inline-block;
-    color: #38003C;
-}
-#tabimg{
-    margin-left:10px;
-    height: 80px;
-    width: 80px;
-}
+thead th {
+    color: white !important;   
+    font-size: 18px;           
+    font-weight: bold;     
+    background-color: #38003C !important;    
+ }
+
 td img{ 
     margin: 0px 10px;
     height: 30px;
@@ -137,7 +119,7 @@ span{
 }
 
 table{
-    margin: 0px 10px;
+    margin: 10px 0px;
 }
 
 tr:nth-child(-n+4) td:first-child {
@@ -182,7 +164,8 @@ tr:nth-last-child(-n+3) td:first-child::before {
     background-color: red; 
 }
 #guideLine{
-    margin: 20px;
+    margin-left: 120px;
+    margin-bottom: 20px;
     border: 1px solid #38003C;
     padding: 20px;
     border-radius: 10px;
@@ -231,4 +214,21 @@ margin: 20px;
     height: 60%; 
     background-color: red;
      
+}
+.rounded-table {
+      border-collapse: separate !important;
+      border-spacing: 0;
+      border-radius: 15px;
+}
+.rounded-table thead th:first-child {
+  border-top-left-radius: 15px;
+}
+.rounded-table thead th:last-child {
+  border-top-right-radius: 15px;
+}
+.rounded-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 15px;
+}
+ .rounded-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 15px;
 }
